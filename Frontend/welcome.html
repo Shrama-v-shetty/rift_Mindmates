@@ -3,260 +3,333 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MindMates – Emergency Response</title>
+
+<title>PharmaGuard – Pharmacogenomics Analyzer</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
+/* ================= ROOT THEME ================= */
 :root {
-    --brand-dark: #06402B;
-    --brand-primary: #059669;
-    --brand-hover: #047857;
-    --white: #ffffff;
-    --text-body: #374151;
-
-    --shadow-soft: 0 25px 50px rgba(0, 0, 0, 0.25);
-    --shadow-card: 0 4px 15px rgba(0, 0, 0, 0.05);
-
-    --bg-start: #06402B;
-    --bg-end: #4d8f73;
+  --background: 0 0% 100%;
+  --surface: 0 0% 100%;
+  --foreground: 220 15% 15%;
+  --primary: 0 84% 60%;        
+  --secondary-brand: 270 85% 60%; 
+  --primary-soft: 0 100% 96%;
+  --secondary-soft: 270 100% 96%;
+  --muted-foreground: 220 10% 45%;
+  --border: 0 20% 88%;
+  --brand-dark: #06402B;
+  --brand-primary: #059669;
+  --brand-hover: #047857;
+  --shadow-soft: 0 25px 50px rgba(0,0,0,0.25);
+  --shadow-card: 0 4px 15px rgba(0,0,0,0.05);
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Inter', sans-serif;
-}
-
-body {
-    min-height: 100vh;
-    background: linear-gradient(180deg, var(--bg-start) 0%, var(--bg-end) 100%);
-    color: var(--text-body);
-    display: flex;
-    flex-direction: column;
-}
+*{margin:0; padding:0; box-sizing:border-box; font-family:'Inter',sans-serif;}
+body{background:white; color:hsl(var(--foreground)); display:flex; flex-direction:column; min-height:100vh;}
 
 /* ================= NAVBAR ================= */
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1.25rem 4rem;
-    backdrop-filter: blur(5px);
-    position: sticky;
-    top: 0;
-    z-index: 100;
+.navbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:1.2rem 3rem;
+  border-bottom:1px solid hsl(var(--border));
+  background:white;
 }
-
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 0.6rem;
-    font-size: 1.4rem;
-    font-weight: 800;
-    color: white;
+.logo{
+  font-weight:800;
+  font-size:1.4rem;
+  background:linear-gradient(90deg,hsl(var(--primary)),hsl(var(--secondary-brand)));
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
 }
-
-/* LOGO IMAGE SIZING */
-.logo-img {
-    height: 100px;
-    width: auto;
-}
-
-.hero-logo {
-    height: 100px;
-    width: auto;
-}
-
-/* Buttons */
-.btn-outline {
-    padding: 0.6rem 1.7rem;
-    font-size: 0.95rem;
-    font-weight: 700;
-    border-radius: 50px;
-    border: 2px solid white;
-    background: transparent;
-    color: white;
-    cursor: pointer;
-}
-
-.btn-outline:hover {
-    background: white;
-    color: var(--brand-dark);
-}
+.nav-links{display:flex; gap:2rem; font-weight:500;}
+.nav-links a{text-decoration:none; color:hsl(var(--muted-foreground));}
+.nav-links a:hover{color:hsl(var(--primary));}
 
 /* ================= HERO ================= */
 .hero {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  text-align: center;
+  padding: 6rem 2rem;
+  background:
+    radial-gradient(circle at top left, hsl(var(--primary-soft)) 0%, transparent 50%),
+    radial-gradient(circle at top right, hsl(var(--secondary-soft)) 0%, transparent 50%),
+    linear-gradient(90deg, hsl(var(--primary)), hsl(var(--secondary-brand)));
 }
 
-.hero-scene {
-    width: 900px;
-    max-width: 95%;
-    height: 520px;
-    perspective: 2000px;
-}
 
-.hero-card {
-    width: 100%;
-    height: 100%;
-    position: relative;
-    transform-style: preserve-3d;
-    transition: transform 0.8s ease;
+.badge{
+  display:inline-block;
+  background:linear-gradient(90deg,hsl(var(--primary-soft)),hsl(var(--secondary-soft)));
+  color:hsl(var(--primary));
+  padding:0.5rem 1.2rem;
+  border-radius:999px;
+  font-weight:600;
+  margin-bottom:1.5rem;
+  font-size:0.9rem;
 }
+.hero-title{font-size:3.2rem; line-height:1.2; font-weight:800;}
+.text-gradient-medical{background:linear-gradient(90deg,hsl(var(--primary)),hsl(var(--secondary-brand))); -webkit-background-clip:text; -webkit-text-fill-color:transparent;}
+.hero-subtitle{max-width:720px; margin:1.5rem auto 2.5rem; font-size:1.1rem; color:hsl(var(--muted-foreground));}
+.hero-buttons{display:flex; gap:1rem; justify-content:center; margin-bottom:3rem;}
+.button-primary{background:linear-gradient(90deg,hsl(var(--primary)),hsl(var(--secondary-brand))); color:white; padding:0.9rem 1.8rem; border:none; border-radius:0.8rem; font-weight:600; cursor:pointer; font-size:1rem; box-shadow:0 10px 25px rgba(0,0,0,0.15); transition:0.2s;}
+.button-primary:hover{transform:translateY(-2px); opacity:0.9;}
+.button-secondary{background:white; border:1px solid hsl(var(--border)); padding:0.9rem 1.8rem; border-radius:0.8rem; font-weight:600; cursor:pointer; color:hsl(var(--foreground));}
+.button-secondary:hover{border-color:hsl(var(--primary));}
 
-.hero-scene.flip .hero-card {
-    transform: rotateY(180deg);
-}
-
-.hero-face {
-    position: absolute;
-    inset: 0;
-    padding: 3rem;
-    border-radius: 1.5rem;
-    background: white;
-    box-shadow: var(--shadow-soft);
-    backface-visibility: hidden;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.hero-front {
-    text-align: center;
-}
-
-.hero-front h1 {
-    font-size: 3rem;
-    color: var(--brand-dark);
-    font-weight: 800;
-    margin-bottom: 1.5rem;
-}
-
-.subtitle {
-    font-size: 1.15rem;
-    margin-bottom: 2.5rem;
-}
-
-.btn-primary {
-    background: var(--brand-primary);
-    color: white;
-    font-size: 1.1rem;
-    font-weight: 700;
-    padding: 1.1rem 3rem;
-    border: none;
-    border-radius: 50px;
-    cursor: pointer;
-}
-
-.btn-primary:hover {
-    background: var(--brand-hover);
-}
-
-/* BACK */
-.hero-back {
-    transform: rotateY(180deg);
-    background: #f0fdf4;
-}
-
-.about-title {
-    font-size: 2.2rem;
-    font-weight: 800;
-    margin-bottom: 2rem;
-    color: var(--brand-dark);
-}
-
-.about-boxes {
-    display: flex;
-    gap: 1.5rem;
-}
-
-.about-card {
-    background: white;
-    padding: 1.5rem;
-    border-radius: 1rem;
-    box-shadow: var(--shadow-card);
-}
+/* ================= HERO CARD FLIP (ABOUT) ================= */
+.hero-scene{width:900px; max-width:95%; height:520px; perspective:2000px; margin:0 auto;}
+.hero-card{width:100%; height:100%; position:relative; transform-style:preserve-3d; transition:transform 0.8s ease;}
+.hero-scene.flip .hero-card{transform:rotateY(180deg);}
+.hero-face{position:absolute; inset:0; padding:3rem; border-radius:1.5rem; background:white; box-shadow:var(--shadow-soft); backface-visibility:hidden; display:flex; flex-direction:column; align-items:center; justify-content:center;}
+.hero-back{transform:rotateY(180deg);}
+.about-title{font-size:2.2rem; font-weight:800; margin-bottom:2rem; color:hsl(var(--primary));}
+.about-boxes{display:flex; gap:1.5rem; flex-wrap:wrap;}
+.about-card{background:white; padding:1.5rem; border-radius:1rem; box-shadow:var(--shadow-card); width:250px; text-align:left;}
 
 /* FOOTER */
-footer {
-    text-align: center;
-    padding: 1.5rem;
-    color: white;
+footer{text-align:center; padding:1.5rem; color:hsl(var(--muted-foreground));}
+
+/* BUTTONS */
+.btn-outline{padding:0.6rem 1.7rem; font-size:0.95rem; font-weight:700; border-radius:50px; border:2px solid hsl(var(--primary)); background:transparent; color:hsl(var(--primary)); cursor:pointer;}
+.btn-outline:hover{background:hsl(var(--primary)); color:white;}
+/* Logo wrapper keeps navbar height fixed */
+.logo-wrap{
+  display:flex;
+  align-items:center;
+  height:60px;        /* same as navbar visual height */
 }
+
+/* Bigger logo but constrained */
+.logo-img{
+  height:80px;        /* increase size */
+  width:auto;
+  object-fit:contain;
+
+  /* Prevent navbar stretch */
+  max-height:70px;
+}
+.navbar{
+  height:70px;        /* lock navbar height */
+}
+
+
 </style>
 </head>
 
 <body>
 
+<!-- NAVBAR -->
 <nav class="navbar">
-    <div class="logo">
-        <img src="logo.png" alt="MindMates Logo" class="logo-img">
-        <span>MindMates</span>
-    </div>
-    <button class="btn-outline" onclick="flipHero()">About Us</button>
+  <div class="logo-wrap">
+    <img src="logo.png" alt="PharmaGuard Logo" class="logo-img">
+  </div>
+
+  <button class="btn-outline" onclick="flipHero()">About Us</button>
+
 </nav>
 
+
+<!-- HERO CARD -->
 <section class="hero">
-    <div class="hero-scene" id="heroScene">
-        <div class="hero-card">
+  <div class="hero-scene" id="heroScene">
+    <div class="hero-card">
+      
+      <!-- FRONT -->
+      <div class="hero-face hero-front">
+        <div class="badge">
+  <img src="logo.png" alt="PharmaGuard Logo" style="height:50px; width:auto; vertical-align:middle; margin-right:8px;">
+  AI-Powered Pharmacogenomics
+</div>
 
-            <!-- FRONT -->
-            <div class="hero-face hero-front">
-                <div class="logo" style="margin-bottom: 20px;">
-                    <img src="logo.png" alt="MindMates Logo" class="hero-logo">
-                </div>
-
-                <h1>Thinking Faster When Seconds Matter</h1>
-                <p class="subtitle">
-                    Connect emergency responders, hospitals, and citizens in real-time
-                    for faster coordinated medical response.
-                </p>
-                <button class="btn-primary" onclick="reportEmergency()">Report Emergency</button>
-            </div>
-
-            <!-- BACK -->
-            <div class="hero-face hero-back">
-                <h2 class="about-title">About Us</h2>
-                <div class="about-boxes">
-                    <div class="about-card">
-                        <h3>🎯 Our Mission</h3>
-                        <p>Enable faster emergency medical response using smart coordination.</p>
-                    </div>
-                    <div class="about-card">
-                        <h3>⚡ What We Do</h3>
-                        <p>Instant reporting, ambulance tracking, and hospital alerts.</p>
-                    </div>
-                    <div class="about-card">
-                        <h3>💚 Why MindMates</h3>
-                        <p>Because every second matters — technology saves lives.</p>
-                    </div>
-                </div>
-
-                <br>
-                <button class="btn-outline" onclick="flipHero()" style="color:#059669;border-color:#059669;">← Back</button>
-            </div>
+        <h1 class="hero-title">Personalized Drug Safety,<br><span class="text-gradient-medical">Powered by Your DNA</span></h1>
+        <p class="hero-subtitle">Upload your genetic data, select medications, and receive instant AI-driven drug response insights with clinical pharmacogenomic guidance.</p>
+        <div class="hero-buttons">
+          <button class="button-primary" onclick="startAnalyze()">Start Analysis</button>
+          <button class="button-secondary" onclick="scrollToHowItWorks()">Learn How It Works</button>
 
         </div>
+      </div>
+
+      <!-- BACK -->
+      <div class="hero-face hero-back">
+        <h2 class="about-title">About MindMates</h2>
+        <div class="about-boxes">
+          <div class="about-card">
+            <h3>🎯 Our Mission</h3>
+            <p>Provide safe and personalized drug guidance using genetic data and AI.</p>
+          </div>
+          <div class="about-card">
+            <h3>⚡ What We Do</h3>
+            <p>Analyze genetic variants to predict drug response and suggest dosing adjustments.</p>
+          </div>
+          <div class="about-card">
+            <h3> 💜Why Mindmates</h3>
+            <p>Prevent adverse drug reactions and improve precision medicine outcomes.</p>
+          </div>
+        </div>
+        <br>
+        <button class="btn-outline" onclick="flipHero()">← Back</button>
+      </div>
+
     </div>
+  </div>
+</section>
+<!-- ================= HOW IT WORKS ================= -->
+<section id="howItWorks" style="
+  padding:80px 40px; 
+  text-align:center;
+  background:
+    radial-gradient(circle at top left, hsl(var(--primary-soft)) 0%, transparent 50%),
+    radial-gradient(circle at top right, hsl(var(--secondary-soft)) 0%, transparent 50%);
+">
+
+  <div style="margin-bottom:20px;">
+    <span style="
+      background: linear-gradient(90deg, hsl(var(--primary-soft)), hsl(var(--secondary-soft)));
+      color: hsl(var(--primary));
+      padding:8px 18px;
+      border-radius:999px;
+      font-weight:600;
+      font-size:14px;
+    ">
+      HOW IT WORKS
+    </span>
+  </div>
+
+  <h2 style="font-size:2.5rem; font-weight:800; margin-bottom:10px;">
+    Four Simple Steps to
+    <span style="background:linear-gradient(90deg,hsl(var(--primary)),hsl(var(--secondary-brand))); -webkit-background-clip:text; -webkit-text-fill-color:transparent;">
+      Safer Prescriptions
+    </span>
+  </h2>
+
+  <p style="color:hsl(var(--muted-foreground)); margin-bottom:60px;">
+    From genetic data upload to actionable clinical insights in seconds.
+  </p>
+
+  <!-- STEPS GRID -->
+  <div style="
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:40px;
+    max-width:1200px;
+    margin:auto;
+  ">
+
+    <!-- STEP 1 -->
+    <div style="background:white; border-radius:1.5rem; padding:2rem; box-shadow:var(--shadow-card);">
+      <div style="
+        width:80px;
+        height:80px;
+        margin:auto;
+        background:linear-gradient(135deg, hsl(var(--primary)), hsl(var(--secondary-brand)));
+        border-radius:20px;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        font-size:30px;
+        color:white;
+      ">
+        ⬆️
+      </div>
+      <h3 style="margin-top:20px;">Upload Genetic Data</h3>
+      <p style="color:hsl(var(--muted-foreground)); font-size:14px;">
+        Upload your VCF file containing genetic variant information.
+      </p>
+    </div>
+
+    <!-- STEP 2 -->
+    <div style="background:white; border-radius:1.5rem; padding:2rem; box-shadow:var(--shadow-card);">
+      <div style="
+        width:80px;
+        height:80px;
+        margin:auto;
+        background:linear-gradient(135deg, hsl(var(--primary)), hsl(var(--secondary-brand)));
+        border-radius:20px;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        font-size:30px;
+        color:white;
+      ">
+        💊
+      </div>
+      <h3 style="margin-top:20px;">Select Medication</h3>
+      <p style="color:hsl(var(--muted-foreground)); font-size:14px;">
+        Choose from supported drugs like Codeine, Warfarin, Clopidogrel and more.
+      </p>
+    </div>
+
+    <!-- STEP 3 -->
+    <div style="background:white; border-radius:1.5rem; padding:2rem; box-shadow:var(--shadow-card);">
+      <div style="
+        width:80px;
+        height:80px;
+        margin:auto;
+        background:linear-gradient(135deg, hsl(var(--primary)), hsl(var(--secondary-brand)));
+        border-radius:20px;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        font-size:30px;
+        color:white;
+      ">
+        🧪
+      </div>
+      <h3 style="margin-top:20px;">AI Analysis</h3>
+      <p style="color:hsl(var(--muted-foreground)); font-size:14px;">
+        AI cross-references your variants with pharmacogenomic databases.
+      </p>
+    </div>
+
+    <!-- STEP 4 -->
+    <div style="background:white; border-radius:1.5rem; padding:2rem; box-shadow:var(--shadow-card);">
+      <div style="
+        width:80px;
+        height:80px;
+        margin:auto;
+        background:linear-gradient(135deg, hsl(var(--primary)), hsl(var(--secondary-brand)));
+        border-radius:20px;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        font-size:30px;
+        color:white;
+      ">
+        📋
+      </div>
+      <h3 style="margin-top:20px;">Receive Report</h3>
+      <p style="color:hsl(var(--muted-foreground)); font-size:14px;">
+        Get risk labels, gene insights, and prescribing guidance.
+      </p>
+    </div>
+
+  </div>
 </section>
 
+
+
 <footer>
-© 2026 MindMates | Saving lives one second at a time
+© 2026 PharmaGuard | AI-Powered Pharmacogenomics
 </footer>
+
+
 
 <script>
 function flipHero() {
-    document.getElementById("heroScene").classList.toggle("flip");
+  document.getElementById("heroScene").classList.toggle("flip");
 }
 
-function reportEmergency() {
-    window.location.href = "login.html";
+function scrollToHowItWorks() {
+  document.getElementById("howItWorks").scrollIntoView({ behavior: 'smooth' });
+}
+
+function startAnalyze(){
+  window.location.href="dashboard.html";
 }
 </script>
 
