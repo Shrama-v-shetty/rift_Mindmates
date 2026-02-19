@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Drug Risk Analyzer</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Inter, sans-serif;
+}
+
+body{
+  background:#f4f7fb;
+  color:#1f2937;
+}
+
+/* HEADER */
+.header{
+  background:white;
+  padding:18px 40px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  box-shadow:0 2px 10px rgba(0,0,0,0.05);
+}
+
+.logo{
+  font-size:22px;
+  font-weight:600;
+  color:#2563eb;
+}
+
+.nav{
+  display:flex;
+  gap:30px;
+  color:#64748b;
+}
+
+.nav .active{
+  color:#2563eb;
+  font-weight:500;
+}
+
+.upload-btn{
+  background:linear-gradient(180deg,#4facfe,#3b82f6);
+  color:white;
+  padding:10px 18px;
+  border-radius:8px;
+}
+
+/* MAIN PANEL */
+.main{
+  max-width:1250px;
+  margin:30px auto;
+  padding:0 25px;
+}
+
+.panel{
+  background:white;
+  border-radius:14px;
+  padding:25px;
+  box-shadow:0 6px 20px rgba(0,0,0,0.05);
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:1.2fr 0.8fr;
+  gap:25px;
+}
+
+/* UPLOAD BOX */
+.upload-box{
+  border:2px dashed #bcd6ff;
+  border-radius:10px;
+  padding:35px;
+  text-align:center;
+  margin-top:15px;
+}
+
+.upload-title{
+  font-size:18px;
+  margin-bottom:8px;
+}
+
+.browse{
+  color:#3b82f6;
+  font-weight:500;
+}
+
+.meta{
+  margin-top:10px;
+  color:#6b7280;
+  font-size:14px;
+}
+
+/* INPUT */
+.input{
+  width:100%;
+  padding:12px;
+  margin-top:15px;
+  border-radius:8px;
+  border:1px solid #dbe3ef;
+}
+
+/* TAGS */
+.tags{
+  margin-top:12px;
+}
+
+.tag{
+  display:inline-flex;
+  align-items:center;
+  background:#eef4ff;
+  padding:6px 12px;
+  border-radius:8px;
+  margin:4px;
+  font-size:14px;
+}
+
+.tag.invalid{
+  background:#fff1f1;
+  color:#dc2626;
+}
+
+/* RESULT CARD */
+.result-card{
+  background:#f8fbff;
+  border-radius:10px;
+  padding:12px 14px;
+  margin-top:10px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.badge{
+  color:white;
+  padding:5px 12px;
+  border-radius:6px;
+  font-size:14px;
+}
+
+.safe{background:#22c55e;}
+.adjust{background:#f59e0b;}
+.toxic{background:#ef4444;}
+
+/* BUTTONS */
+.btn{
+  margin-top:15px;
+  padding:10px 16px;
+  border-radius:8px;
+  display:inline-block;
+}
+
+.primary{
+  background:#3b82f6;
+  color:white;
+}
+
+.secondary{
+  background:#e5edf9;
+}
+</style>
+</head>
+
+<body>
+
+<div class="header">
+  <div class="logo">Drug Risk Analyzer</div>
+
+  <div class="nav">
+    <span class="active">Upload</span>
+    <span>Drug Inputs</span>
+    <span>Results</span>
+  </div>
+
+  <div class="upload-btn">Upload VCF</div>
+</div>
+
+<div class="main">
+<div class="panel">
+
+<div class="grid">
+
+<!-- LEFT SIDE -->
+<div>
+
+<h3>File Upload</h3>
+
+<div class="upload-box">
+  <div class="upload-title">
+    Drag & drop VCF file here or <span class="browse">Browse</span>
+  </div>
+  <div class="meta">Accepted format: vcf | Max size: 100 MB</div>
+</div>
+
+<h3 style="margin-top:25px;">Drug Inputs</h3>
+
+<input class="input" placeholder="Enter drug(s)">
+
+<div class="tags">
+  <span class="tag">Aspirin</span>
+  <span class="tag">Warfarin</span>
+  <span class="tag">Metformin</span>
+  <span class="tag invalid">InvalidDrug</span>
+</div>
+
+<div class="btn primary">Download VCF</div>
+
+</div>
+
+<!-- RIGHT SIDE -->
+<div>
+
+<h3>Results</h3>
+
+<div class="result-card">
+  <span>Lisinopril</span>
+  <span class="badge safe">Safe</span>
+</div>
+
+<div class="result-card">
+  <span>Ibuprofen</span>
+  <span class="badge adjust">Adjust</span>
+</div>
+
+<div class="result-card">
+  <span>Clopidogrel</span>
+  <span class="badge toxic">Toxic/Ineffective</span>
+</div>
+
+<div class="btn primary">Download JSON</div>
+<div class="btn secondary">Copy</div>
+
+</div>
+
+</div>
+</div>
+</div>
+
+</body>
+</html>
