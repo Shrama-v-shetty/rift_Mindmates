@@ -8,8 +8,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
 <style>
-
-/* ================= THEME ================= */
 :root{
   --primary: 0 84% 60%;
   --secondary-brand: 270 85% 60%;
@@ -20,15 +18,7 @@
   --muted-foreground: 220 10% 40%;
   --border: 220 15% 85%;
 }
-
-/* ================= GLOBAL ================= */
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:Inter, sans-serif;
-}
-
+*{margin:0;padding:0;box-sizing:border-box;font-family:Inter, sans-serif;}
 body{
   background:
     radial-gradient(circle at top left, hsl(var(--primary-soft)) 0%, transparent 50%),
@@ -37,8 +27,6 @@ body{
   color:hsl(var(--foreground));
   min-height:100vh;
 }
-
-/* ================= HEADER ================= */
 .header{
   background:hsl(var(--surface));
   padding:18px 40px;
@@ -47,7 +35,6 @@ body{
   align-items:center;
   border-bottom:1px solid hsl(var(--border));
 }
-
 .logo{
   font-size:22px;
   font-weight:700;
@@ -57,150 +44,57 @@ body{
   -webkit-background-clip:text;
   -webkit-text-fill-color:transparent;
 }
-
-.upload-btn{
-  background:linear-gradient(90deg,
-      hsl(var(--primary)),
-      hsl(var(--secondary-brand)));
-  color:white;
-  padding:10px 18px;
-  border-radius:8px;
-  font-weight:600;
-  cursor:pointer;
-}
-
-/* ================= MAIN ================= */
-.main{
-  max-width:1500px;
-  margin:70px auto;
-  padding:0 25px;
-}
-
+.main{max-width:1500px;margin:70px auto;padding:0 25px;}
 .panel{
   background:hsl(var(--surface));
   border-radius:20px;
   padding:60px;
   box-shadow:0 25px 60px rgba(0,0,0,0.25);
 }
-
-.grid{
-  display:grid;
-  grid-template-columns:1.2fr 0.8fr;
-  gap:35px;
-}
-
-/* ================= UPLOAD ================= */
+.grid{display:grid;grid-template-columns:1.2fr 0.8fr;gap:35px;}
 .upload-box{
   border:2px dashed hsl(var(--primary));
   border-radius:14px;
   padding:40px;
   text-align:center;
   margin-top:15px;
-  background:linear-gradient(
-      90deg,
-      hsl(var(--primary-soft)),
-      hsl(var(--secondary-soft)));
+  background:linear-gradient(90deg,hsl(var(--primary-soft)),hsl(var(--secondary-soft)));
 }
-
-.meta{
-  margin-top:10px;
-  color:hsl(var(--muted-foreground));
-}
-
-/* NEW upload button under box */
+.meta{margin-top:10px;color:hsl(var(--muted-foreground));}
 .upload-section-btn{
   margin-top:15px;
-  background:linear-gradient(90deg,
-      hsl(var(--primary)),
-      hsl(var(--secondary-brand)));
-  color:white;
-  padding:10px 18px;
-  border:none;
-  border-radius:10px;
-  font-weight:600;
-  cursor:pointer;
+  background:linear-gradient(90deg,hsl(var(--primary)),hsl(var(--secondary-brand)));
+  color:white;padding:10px 18px;border:none;border-radius:10px;font-weight:600;cursor:pointer;
 }
-
-/* ================= INPUT ================= */
 .input{
-  width:100%;
-  padding:14px;
-  margin-top:20px;
-  border-radius:12px;
-  border:1px solid hsl(var(--border));
+  width:100%;padding:14px;margin-top:20px;border-radius:12px;border:1px solid hsl(var(--border));
 }
-
-/* ================= TAGS ================= */
 .tags{margin-top:12px;}
-
 .tag{
   display:inline-flex;
-  background:linear-gradient(
-      90deg,
-      hsl(var(--primary-soft)),
-      hsl(var(--secondary-soft)));
-  padding:8px 14px;
-  border-radius:10px;
-  margin:4px;
-  font-size:14px;
+  background:linear-gradient(90deg,hsl(var(--primary-soft)),hsl(var(--secondary-soft)));
+  padding:8px 14px;border-radius:10px;margin:4px;font-size:14px;
 }
-
-/* ================= RESULTS ================= */
 .result-card{
-  background:linear-gradient(
-      90deg,
-      hsl(var(--primary-soft)),
-      hsl(var(--secondary-soft)));
-  border-radius:14px;
-  padding:14px 16px;
-  margin-top:12px;
-  display:flex;
-  justify-content:space-between;
+  background:linear-gradient(90deg,hsl(var(--primary-soft)),hsl(var(--secondary-soft)));
+  border-radius:14px;padding:14px 16px;margin-top:12px;display:flex;justify-content:space-between;
 }
-
-.badge{
-  color:white;
-  padding:6px 14px;
-  border-radius:8px;
-  font-size:14px;
-  font-weight:600;
-}
-
+.badge{color:white;padding:6px 14px;border-radius:8px;font-size:14px;font-weight:600;}
 .safe{background:#22c55e;}
 .adjust{background:#f59e0b;}
 .toxic{background:#ef4444;}
-
-.btn{
-  margin-top:20px;
-  padding:12px 18px;
-  border-radius:10px;
-  font-weight:600;
-  cursor:pointer;
-  display:inline-block;
-}
-
-.primary{
-  background:linear-gradient(
-      90deg,
-      hsl(var(--primary)),
-      hsl(var(--secondary-brand)));
-  color:white;
-}
-
+.btn{margin-top:20px;padding:12px 18px;border-radius:10px;font-weight:600;cursor:pointer;display:inline-block;}
+.primary{background:linear-gradient(90deg,hsl(var(--primary)),hsl(var(--secondary-brand)));color:white;}
 .secondary{background:#eef2ff;}
-
 </style>
 </head>
 
 <body>
 
-<!-- HEADER -->
 <div class="header">
   <div class="logo">Drug Risk Analyzer</div>
-  
 </div>
 
-<!-- MAIN -->
 <div class="main">
 <div class="panel">
 <div class="grid">
@@ -217,7 +111,6 @@ body{
  </div>
 </div>
 
-<!-- NEW BUTTON UNDER UPLOAD -->
 <button class="upload-section-btn" id="uploadBtn">
  Upload VCF
 </button>
@@ -228,10 +121,17 @@ body{
  <option disabled selected>Select drug(s)</option>
 </select>
 
+<!-- Tags div moved **below dropdown** and above patient name -->
 <div class="tags"></div>
 
-<div class="btn primary">Download VCF</div>
-<div class="btn primary">Click for extra info</div>
+<input type="text" id="patientName" placeholder="Enter Patient Name" class="input" style="margin-top:15px;">
+
+<!-- Extra info button styled -->
+<button class="btn primary" id="extraInfoBtn" style="margin-top:15px;">
+  Click here for extra information
+</button>
+
+<div class="btn primary" id="analyzeBtn">Analyze</div>
 
 </div>
 
@@ -240,24 +140,10 @@ body{
 
 <h3>Results</h3>
 <div id="results"></div>
-<div class="result-card">
-  <span>Lisinopril</span>
-  <span class="badge safe">Safe</span>
-</div>
 
 <div class="result-card">
-  <span>Ibuprofen</span>
-  <span class="badge adjust">Adjust</span>
-</div>
-
-<div class="result-card">
-  <span>Clopidogrel</span>
-  <span class="badge toxic">Toxic/Ineffective</span>
-</div>
-
-<div class="btn primary">Generate / Download JSON</div>
-<div class="btn secondary">Copy to clipboard</div>
-
+<div class="btn primary" id="downloadJsonBtn">Download JSON</div>
+<div class="btn secondary" id="copyBtn">Copy to clipboard</div>
 </div>
 
 </div>
@@ -266,7 +152,7 @@ body{
 
 <script>
 
-/* ================= DRUG DATABASE ================= */
+/* ================= DRUG LIST ================= */
 const supportedDrugs=[
  "CODEINE",
  "WARFARIN",
@@ -284,87 +170,185 @@ supportedDrugs.forEach(drug=>{
  drugSelect.appendChild(opt);
 });
 
-/* Tags */
 const tags=document.querySelector(".tags");
+let selectedDrugs=[];
+let fullResults = [];
 
-drugSelect.addEventListener("change",e=>{
+
+/* ================= SELECT DRUG ================= */
+drugSelect.addEventListener("change", e => {
+ const drugName = e.target.value;
+ if(selectedDrugs.includes(drugName)) return;
+
+ selectedDrugs.push(drugName);
+
+ // Create tag below dropdown
  const tag=document.createElement("span");
  tag.className="tag";
- tag.innerText=e.target.value;
+ tag.innerText=drugName;
  tags.appendChild(tag);
+
  drugSelect.value="";
 });
 
 /* ================= FILE UPLOAD ================= */
-
 let uploadedVCF=null;
 
 function openFilePicker(){
-
  const input=document.createElement("input");
  input.type="file";
  input.accept=".vcf";
 
  input.onchange=e=>{
-  uploadedVCF=e.target.files[0];
+  const file=e.target.files[0];
+  if(!file) return;
 
-  if(uploadedVCF){
+  const isVcf=file.name.toLowerCase().endsWith('.vcf');
+  const fileSizeMB=file.size/(1024*1024);
+
+  if(!isVcf || fileSizeMB>5){
    document.getElementById("fileMeta").innerText=
-    "Loaded: "+uploadedVCF.name;
+   "Error: Ensure .vcf format and size < 5MB";
+   uploadedVCF=null;
+   return;
   }
- };
 
+  uploadedVCF=file;
+  document.getElementById("fileMeta").innerText="Loaded: "+file.name;
+ };
  input.click();
 }
 
-/* Click events */
-document.getElementById("uploadBox")
-.onclick=openFilePicker;
+document.getElementById("uploadBox").onclick=openFilePicker;
+document.getElementById("uploadBtn").onclick=openFilePicker;
 
-document.getElementById("uploadBtn")
-.onclick=openFilePicker;
+/* ================= ANALYZE ================= */
+document.getElementById("analyzeBtn").onclick = async () => {
 
-/* ================= RESULTS ================= */
+  const resultBox = document.getElementById("results");
+  resultBox.innerHTML = "";
 
-document.querySelectorAll(".primary")[1]
-.onclick=()=>{
+  fullResults = []; // 🔥 important reset
+ const patientName=document.getElementById("patientName").value;
 
- const resultBox=document.getElementById("results");
- resultBox.innerHTML="";
+ if(!uploadedVCF){ alert("Upload VCF first"); return; }
+ if(selectedDrugs.length===0){ alert("Select at least one drug"); return; }
+ if(!patientName){ alert("Enter patient name"); return; }
 
- if(!uploadedVCF){
-  resultBox.innerHTML=
-   "<p style='color:red'>Upload VCF first</p>";
-  return;
+ for(const drug of selectedDrugs){
+
+   const formData=new FormData();
+   formData.append("patientName", patientName);
+   formData.append("drug", drug);
+   formData.append("vcf", uploadedVCF);
+
+   try{
+     const response=await fetch("http://localhost:5000/analyze",{
+       method:"POST",
+       body:formData
+     });
+const data = await response.json();
+fullResults.push(data);   // 🔥 store full backend object
+
+
+if(!window.fullResults) window.fullResults = [];
+window.fullResults.push(data);
+
+const risk = data.risk_assessment.risk_label;
+
+
+     resultBox.innerHTML+=`
+      <div class="result-card">
+       <span>${drug}</span>
+       <span class="badge ${
+         risk==="Safe"?"safe":
+         risk==="Adjust Dosage"?"adjust":"toxic"
+       }">${risk}</span>
+      </div>
+     `;
+   }catch(err){
+     resultBox.innerHTML="<p style='color:red'>Server Error</p>";
+   }
  }
-
- const tagList=document.querySelectorAll(".tag");
-
- tagList.forEach(t=>{
-
-  const risks=["Safe","Adjust","Toxic/Ineffective"];
-  const risk=risks[Math.floor(Math.random()*3)];
-
-  resultBox.innerHTML+=`
-   <div class="result-card">
-    <span>${t.innerText}</span>
-    <span class="badge ${
-      risk==="Safe"?"safe":
-      risk==="Adjust"?"adjust":"toxic"
-    }">${risk}</span>
-   </div>`;
- });
 };
 
-/* Copy */
+/* ================= DOWNLOAD JSON ================= */
+document.getElementById("downloadJsonBtn").onclick = () => {
 
-document.querySelector(".secondary")
-.onclick=()=>{
- navigator.clipboard.writeText("Copied Results");
- alert("Copied");
+  if(fullResults.length === 0){
+    alert("No results to download");
+    return;
+  }
+
+  const blob = new Blob(
+    [JSON.stringify(fullResults, null, 2)],
+    { type: "application/json" }
+  );
+
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = "drug_analysis_results.json";
+  a.click();
+
+  URL.revokeObjectURL(url);
+};
+
+
+
+/* ================= COPY ================= */
+document.getElementById("copyBtn").onclick=()=>{
+ const cards=document.querySelectorAll("#results .result-card");
+ const results=[];
+ cards.forEach(card=>{
+  results.push({
+    drug:card.querySelector("span").innerText,
+    severity:card.querySelector(".badge").innerText
+  });
+ });
+ if(results.length===0){ alert("No results"); return; }
+
+ navigator.clipboard.writeText(JSON.stringify(results,null,2))
+ .then(()=>alert("Copied!"));
+};
+/* ================= AI EXPLANATION ================= */
+document.getElementById("extraInfoBtn").onclick = () => {
+  if(fullResults.length === 0){
+    alert("Run analysis first");
+    return;
+  }
+
+  const resultBox = document.getElementById("results");
+
+  const explanationDiv = document.createElement("div");
+  explanationDiv.style.marginTop = "20px";
+  explanationDiv.style.padding = "20px";
+  explanationDiv.style.background = "#ffffff";
+  explanationDiv.style.borderRadius = "12px";
+  explanationDiv.style.boxShadow = "0 5px 20px rgba(0,0,0,0.1)";
+
+  let combinedExplanation = "";
+
+  fullResults.forEach(result => {
+    let desc = "";
+    const risk = result.risk_assessment.risk_label;
+
+    if(risk === "Safe") desc = "This drug is safe for the patient based on their genetic profile.";
+    else if(risk === "Adjust Dosage") desc = "This drug may require a dosage adjustment for safe use.";
+    else if(risk === "Toxic") desc = "This drug could be harmful; alternative treatments are recommended.";
+
+    combinedExplanation += `
+      <h4 style="margin-top:15px;">${result.drug}</h4>
+      <p>${desc}</p>
+      <hr>
+    `;
+  });
+
+  explanationDiv.innerHTML = `<h3>Drug Risk Explanation</h3>${combinedExplanation}`;
+  resultBox.appendChild(explanationDiv);
 };
 
 </script>
 
-</body>
+</body> 
 </html>
