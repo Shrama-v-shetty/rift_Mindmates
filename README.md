@@ -217,9 +217,9 @@ This demonstrates how MindMates converts genomic data into actionable clinical i
 
 ## 12. Live Links
 
--
+
 - **Live Demo:** https://stately-strudel-400683.netlify.app/ 
 - **GitHub Repository:** https://github.com/your-username/mindmates  
 - **LinkedIn Demo Video:** https://linkedin.com/your-demo-video
-- 
+ 
 ---
