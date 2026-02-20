@@ -31,51 +31,51 @@ Adverse Drug Reactions (ADRs) cause significant preventable deaths each year. Ma
 
 ## 4. System Architecture
 
-1. User uploads VCF file and enters drug names
-2. Backend parses genomic variants and maps them to pharmacogenes
-3. Risk engine predicts drug response using CPIC guidelines
-4. Gemini API LLM generates explanations for each prediction
-5. Results returned to frontend as structured JSON and displayed in a dashboard
+1. User uploads VCF file and enters drug names  
+2. Backend parses genomic variants and maps them to pharmacogenes  
+3. Risk engine predicts drug response using guidelines from the Clinical Pharmacogenetics Implementation Consortium (CPIC)  
+4. Gemini API LLM generates explanations for each prediction  
+5. Results returned to frontend as structured JSON and displayed in a dashboard  
 
-
-      +-----------------+
-      |     User        |
-      | Uploads VCF &   |
-      | Enters Drugs    |
-      +--------+--------+
-               |
-               v
-      +-----------------+
-      |    Backend      |
-      | Parses genomic  |
-      | variants & maps |
-      | to pharmacogenes|
-      +--------+--------+
-               |
-               v
-      +-----------------+
-      |   Risk Engine   |
-      | Predicts drug   |
-      | response using  |
-      | CPIC guidelines |
-      +--------+--------+
-               |
-               v
-      +-----------------+
-      | Gemini API LLM  |
-      | Generates       |
-      | Explanations    |
-      +--------+--------+
-               |
-               v
-      +-----------------+
-      |   Frontend      |
-      | Displays JSON   |
-      | Dashboard       |
-      +-----------------+
+```
++-----------------+
+|      User       |
+| Uploads VCF &   |
+| Enters Drugs    |
++--------+--------+
+         |
+         v
++-----------------+
+|     Backend     |
+| Parses genomic  |
+| variants & maps |
+| to pharmacogenes|
++--------+--------+
+         |
+         v
++-----------------+
+|    Risk Engine  |
+| Predicts drug   |
+| response using  |
+| CPIC guidelines |
++--------+--------+
+         |
+         v
++-----------------+
+|  Gemini API LLM |
+| Generates       |
+| Explanations    |
++--------+--------+
+         |
+         v
++-----------------+
+|    Frontend     |
+| Displays JSON   |
+| Dashboard       |
++-----------------+
+```
 
 ---
-
 
 
 ## 5. Technology Stack
