@@ -251,7 +251,7 @@ Steps:
 
 
 - **Live Demo:** https://stately-strudel-400683.netlify.app/ 
-- **GitHub Repository:** https://github.com/your-username/mindmates  
+- **GitHub Repository:** https://github.com/Shrama-v-shetty/rift_Mindmates.git  
 - **LinkedIn Demo Video:** https://linkedin.com/your-demo-video
  
 ---
