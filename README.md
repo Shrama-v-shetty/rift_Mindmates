@@ -96,7 +96,7 @@ npm start
 ```
 
 
-Server runs at: **http://localhost:5000**
+Server runs at: **http://127.0.0.1:5500/welcome.html**
 
 Open frontend: **frontend/welcome.html** in a browser
 
