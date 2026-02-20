@@ -89,8 +89,8 @@ Adverse Drug Reactions (ADRs) cause significant preventable deaths each year. Ma
 ## 6. Installation
 
 ```bash
-git clone https://github.com/your-username/mindmates.git
-cd mindmates
+git clone https://github.com/Shrama-v-shetty/rift_Mindmates.git
+cd rift_Mindmates
 npm install
 npm start
 ```
