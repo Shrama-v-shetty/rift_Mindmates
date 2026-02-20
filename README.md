@@ -215,7 +215,39 @@ This demonstrates how MindMates converts genomic data into actionable clinical i
 
 ---
 
-## 12. Live Links
+## 12. Deployment Instructions
+
+### Frontend Deployment (Netlify)
+
+1. Push the project to GitHub.
+2. Log in to Netlify.
+3. Click **Add New Site** → **Import from GitHub**.
+4. Select the repository.
+5. Set the publish directory to the folder containing the frontend files.
+6. Rename `welcome.html` to `index.html` before deployment (Netlify requires `index.html` as the entry file).
+7. Click **Deploy Site**.
+
+Live URL:
+https://stately-strudel-400683.netlify.app/
+
+---
+
+### Backend Deployment
+
+The backend can be deployed using platforms such as Render, Railway, or similar services.
+
+Steps:
+1. Connect the GitHub repository to the hosting platform.
+2. Add environment variables:
+   - MONGO_URI
+   - PORT
+   - GEMINI_API_KEY
+3. Set start command:
+   npm start
+4. Deploy the service.
+
+
+## 13. Live Links
 
 
 - **Live Demo:** https://stately-strudel-400683.netlify.app/ 
