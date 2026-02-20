@@ -252,6 +252,6 @@ Steps:
 
 - **Live Demo:** https://stately-strudel-400683.netlify.app/ 
 - **GitHub Repository:** https://github.com/Shrama-v-shetty/rift_Mindmates.git  
-- **LinkedIn Demo Video:** https://linkedin.com/your-demo-video
+- **LinkedIn Demo Video:** https://www.linkedin.com/posts/shrama-v-shetty_rift2026-pharmaguard-pharmacogenomics-activity-7430436181651206144-rnl3?utm_source=social_share_send&utm_medium=android_app&rcm=ACoAAEyuUwMBrvcO9cgHAUGrj8FhRbRDATcTgJI&utm_campaign=copy_link
  
 ---
